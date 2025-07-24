@@ -1,0 +1,28 @@
+name: SonarCloud Scan on All Branches
+
+# 👇 TRIGGERS: Runs on push to these branches
+on:
+  push:
+    branches: [ "main", "staging", "feat/deploy-to-k8s", "feat/page-statistics-clean", "feat-e-card", "feat-implementing-SPLaSK" ]
+
+jobs:
+  sonar-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Scan with SonarCloud
+      uses: SonarSource/sonarqube-scan-action@v1
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
+      with:
+        args: >
+          -Dsonar.organization=cherry-corp
+          -Dsonar.projectKey=Cherry-Corp_kd-portal
+          -Dsonar.branch.name=${{ github.ref_name }}
+          -Dsonar.branch.target=main
+          -Dsonar.sources=.
