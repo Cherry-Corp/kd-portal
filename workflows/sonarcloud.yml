@@ -1,6 +1,5 @@
 name: SonarCloud Scan on All Branches
 
-# 👇 TRIGGERS: Runs on push to these branches
 on:
   push:
     branches: [ "main", "staging", "feat/deploy-to-k8s", "feat/page-statistics-clean", "feat-e-card", "feat-implementing-SPLaSK" ]
