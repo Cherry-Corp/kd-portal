@@ -31,6 +31,7 @@ jobs:
             # mandatory
             -Dsonar.organization=cherry-corp
             -Dsonar.projectKey=Cherry-Corp_kd-portal
+            -Dsonar.branch.name=staging
             -Dsonar.scm.forceReloadAll=true
             -Dsonar.analysis.force=true
             -Dsonar.verbose=true
