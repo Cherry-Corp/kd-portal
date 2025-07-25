@@ -18,8 +18,6 @@ jobs:
       # 1️⃣ CRITICAL: Checkout code with full history
       - name: Checkout repository
         uses: actions/checkout@v4  # Official GitHub checkout
-        with:
-          fetch-depth: 0  # 🔑 REQUIRED for branch detection
 
       # 2️⃣ Setup Java (required for scanner)
       - name: Setup Java
@@ -33,9 +31,6 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v1  # 🔥 OFFICIAL ACTION
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # From repo secrets
-        with:
-          # 🔧 Scanner arguments
-          fetch-depth: 0
           
           args: > 
             -Dsonar.organization=cherry-corp
