@@ -24,4 +24,5 @@ jobs:
           -Dsonar.projectKey=Cherry-Corp_kd-portal
           -Dsonar.branch.name=${{ github.ref_name }}
           -Dsonar.branch.target=main
+          -Dsonar.verbose=true
           -Dsonar.sources=.
