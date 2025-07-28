@@ -38,10 +38,10 @@ jobs:
           #  with:
           #    node-version: 20
 
-          #env:
-          #  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-          #with:
-          #  command: monitor
+          env:
+            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          with:
+            command: monitor
 
           # Runs Snyk Code (SAST) analysis and uploads result into GitHub.
         - name: Snyk Code test
