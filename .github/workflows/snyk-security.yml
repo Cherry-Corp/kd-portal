@@ -66,7 +66,7 @@ jobs:
           #run: docker build -t your/image-to-test .
           #run: | 
           #    docker build --progress=plain -t your/image-to-test . > docker-build.log 2>&1 || (cat docker-build.log && exit 1)
-		  run: docker build -t my-app-image
+          run: docker build -t my-app-image
     
           # Runs Snyk Container (Container and SCA) analysis and uploads result to Snyk.
         - name: Snyk Container monitor
